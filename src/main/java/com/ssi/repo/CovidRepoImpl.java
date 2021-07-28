@@ -72,4 +72,15 @@ public class CovidRepoImpl implements CovidRepo {
 		return covid;
 	}
 
+	public List<Covid> getDataForAStateAndYear(String state, int year) {
+		Session session=sessionFactory.openSession();
+		Criteria cr=session.createCriteria(Covid.class);
+		Criterion crt1=Restrictions.eq("state", state);
+		Criterion crt2=Restrictions.eq("year",year);
+		cr.add(crt1); cr.add(crt2);
+		List<Covid> covidList=cr.list(); 				 							
+		session.close();
+		return covidList;
+	}
+
 }

@@ -38,4 +38,9 @@ public class CovidServiceImpl implements CovidService{
 		return covidRepo.deleteInfo(id);
 	}
 
+	public List<Covid> getDataForAStateAndYear(String state, int year) {
+		// TODO Auto-generated method stub
+		return covidRepo.getDataForAStateAndYear(state, year);
+	}
+
 }

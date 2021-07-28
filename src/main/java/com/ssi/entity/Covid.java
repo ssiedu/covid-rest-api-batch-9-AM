@@ -16,4 +16,5 @@ public class Covid {
 	private int total;
 	private int active;
 	private int deaths;
+	private int year;
 }
